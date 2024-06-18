@@ -1,5 +1,4 @@
-import { AspectRatio } from "@chakra-ui/react"
-import useTrailers from "../hooks/useTrailers"
+import useTrailers from "../hooks/useTrailers";
 interface Props {
     gameId: number;
 }
