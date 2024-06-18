@@ -19,6 +19,7 @@ const ExpandableText = ({ children }: Props) => {
                     size= 'xs'
                     fontWeight='bold'
                     colorScheme='yellow'
+                    margin= {1}
                     onClick={() => setExpanded(!expanded)}
                 >
                     {expanded ? 'Show Less' : 'Read More'}
