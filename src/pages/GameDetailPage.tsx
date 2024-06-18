@@ -1,4 +1,4 @@
-import { Heading, Text, Spinner, HStack, ListItem, List, SimpleGrid } from "@chakra-ui/react";
+import { Heading, Text, Spinner, HStack, ListItem, List, SimpleGrid, GridItem } from "@chakra-ui/react";
 import { useParams } from "react-router-dom";
 import CriticScore from "../components/CriticScore";
 import DefinitionItem from "../components/DefinitionItem";
@@ -20,15 +20,19 @@ const GameDetailPage = () => {
     if (error || !game) throw error;
 
     return (
-        <>
-            <Heading>
-                {game.name}
-            </Heading>
-            <ExpandableText children={game.description_raw} />
-            <GameAttributes game={game} />
-            <GameTrailer gameId={game.id} />
-            <GameScreenshots gameId={game.id} />
-        </>
+        <SimpleGrid columns={{ base: 1, md: 2}} spacing={5}>
+            <GridItem>
+                <Heading>
+                    {game.name}
+                </Heading>
+                <ExpandableText children={game.description_raw} />
+                <GameAttributes game={game} />
+            </GridItem>
+            <GridItem>
+                <GameTrailer gameId={game.id} />
+                <GameScreenshots gameId={game.id} />
+            </GridItem>
+        </SimpleGrid>
     )
 };
 
